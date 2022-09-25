@@ -1,4 +1,3 @@
-
 <div class="row-fluid">
 	<table class="table table-bordered" id="table_records">
 		<thead>
@@ -16,13 +15,16 @@
 			<?php endforeach;?>
 		</tbody>
 	</table>
-</div>
-<?php $this->start('script_own')?>
-<script>
-$(document).ready(function(){
-	$("#table_records").dataTable({
+	
+	<div class="row-fluid">
+		<div class="span6">
+			<?php echo $this->Paginator->counter('Showing {:start} to {:end} of {:count} entries')?>
+		</div>
 
-	});
-})
-</script>
-<?php $this->end()?>
+		<div class="span6">
+			<div class="pagination pull-right">
+				<ul><?php echo $this->Paginator->numbers(array('first' => 'First', 'last' => 'Last', 'currentTag' => 'a', 'currentClass' => 'active', 'tag' => 'li', 'separator' => '')) ?></ul>
+			</div>
+		</div>
+	</div>
+</div>
