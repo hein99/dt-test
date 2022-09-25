@@ -1,0 +1,1 @@
+<p>User select <?php echo $type ?></p>
